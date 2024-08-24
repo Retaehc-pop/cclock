@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/cclock.dir/src/main.cpp.o CMakeFiles/cclock.dir/src/clock.cpp.o CMakeFiles/cclock.dir/src/timer.cpp.o CMakeFiles/cclock.dir/src/stopwatch.cpp.o CMakeFiles/cclock.dir/src/draw_numeric.cpp.o -o bin/cclock  FTXUI/libftxui-screen.a FTXUI/libftxui-dom.a FTXUI/libftxui-component.a FTXUI/libftxui-dom.a FTXUI/libftxui-screen.a
