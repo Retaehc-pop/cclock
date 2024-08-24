@@ -44,7 +44,7 @@ void Stopwatch::clear_clocked() { clocked.clear(); }
 void Stopwatch::reset() {
   start_time = std::chrono::high_resolution_clock::now();
   running = false;
-  paused = false;
+  paused = true;
   elapsed_time = 0.0;
 }
 

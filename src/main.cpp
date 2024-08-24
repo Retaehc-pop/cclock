@@ -172,8 +172,18 @@ int main() {
       StopwatchPage(),
   };
 
-  auto renderer = Renderer(
-      [&] { return vbox({pages[current_page]->Render() | center}) | center; });
+  Component renderer = Renderer([&] {
+    int width = screen.dimx();
+    int height = screen.dimy();
+    bool small = width < 80 || height < 14;
+    if (small) {
+      return vbox({text("too small") | center,
+                   text("Width : " + std::to_string(width)) | center,
+                   text("Height : " + std::to_string(height)) | center});
+    } else {
+      return vbox({pages[current_page]->Render() | center}) | center;
+    };
+  });
 
   std::thread([&]() {
     while (running) {
@@ -201,6 +211,5 @@ int main() {
     }
     return false;
   }));
-
   return 0;
 }
