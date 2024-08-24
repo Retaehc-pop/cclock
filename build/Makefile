@@ -182,17 +182,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named clock
+# Target rules for targets named cclock
 
 # Build rule for target.
-clock: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clock
-.PHONY : clock
+cclock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cclock
+.PHONY : cclock
 
 # fast build rule for target.
-clock/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/build
-.PHONY : clock/fast
+cclock/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/build
+.PHONY : cclock/fast
 
 #=============================================================================
 # Target rules for targets named screen
@@ -238,7 +238,7 @@ src/clock.o: src/clock.cpp.o
 
 # target to build an object file
 src/clock.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/clock.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/clock.cpp.o
 .PHONY : src/clock.cpp.o
 
 src/clock.i: src/clock.cpp.i
@@ -246,7 +246,7 @@ src/clock.i: src/clock.cpp.i
 
 # target to preprocess a source file
 src/clock.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/clock.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/clock.cpp.i
 .PHONY : src/clock.cpp.i
 
 src/clock.s: src/clock.cpp.s
@@ -254,7 +254,7 @@ src/clock.s: src/clock.cpp.s
 
 # target to generate assembly for a file
 src/clock.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/clock.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/clock.cpp.s
 .PHONY : src/clock.cpp.s
 
 src/draw_numeric.o: src/draw_numeric.cpp.o
@@ -262,7 +262,7 @@ src/draw_numeric.o: src/draw_numeric.cpp.o
 
 # target to build an object file
 src/draw_numeric.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/draw_numeric.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/draw_numeric.cpp.o
 .PHONY : src/draw_numeric.cpp.o
 
 src/draw_numeric.i: src/draw_numeric.cpp.i
@@ -270,7 +270,7 @@ src/draw_numeric.i: src/draw_numeric.cpp.i
 
 # target to preprocess a source file
 src/draw_numeric.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/draw_numeric.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/draw_numeric.cpp.i
 .PHONY : src/draw_numeric.cpp.i
 
 src/draw_numeric.s: src/draw_numeric.cpp.s
@@ -278,7 +278,7 @@ src/draw_numeric.s: src/draw_numeric.cpp.s
 
 # target to generate assembly for a file
 src/draw_numeric.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/draw_numeric.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/draw_numeric.cpp.s
 .PHONY : src/draw_numeric.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -286,7 +286,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -294,7 +294,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -302,7 +302,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/stopwatch.o: src/stopwatch.cpp.o
@@ -310,7 +310,7 @@ src/stopwatch.o: src/stopwatch.cpp.o
 
 # target to build an object file
 src/stopwatch.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/stopwatch.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/stopwatch.cpp.o
 .PHONY : src/stopwatch.cpp.o
 
 src/stopwatch.i: src/stopwatch.cpp.i
@@ -318,7 +318,7 @@ src/stopwatch.i: src/stopwatch.cpp.i
 
 # target to preprocess a source file
 src/stopwatch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/stopwatch.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/stopwatch.cpp.i
 .PHONY : src/stopwatch.cpp.i
 
 src/stopwatch.s: src/stopwatch.cpp.s
@@ -326,7 +326,7 @@ src/stopwatch.s: src/stopwatch.cpp.s
 
 # target to generate assembly for a file
 src/stopwatch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/stopwatch.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/stopwatch.cpp.s
 .PHONY : src/stopwatch.cpp.s
 
 src/timer.o: src/timer.cpp.o
@@ -334,7 +334,7 @@ src/timer.o: src/timer.cpp.o
 
 # target to build an object file
 src/timer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/timer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/timer.cpp.o
 .PHONY : src/timer.cpp.o
 
 src/timer.i: src/timer.cpp.i
@@ -342,7 +342,7 @@ src/timer.i: src/timer.cpp.i
 
 # target to preprocess a source file
 src/timer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/timer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/timer.cpp.i
 .PHONY : src/timer.cpp.i
 
 src/timer.s: src/timer.cpp.s
@@ -350,7 +350,7 @@ src/timer.s: src/timer.cpp.s
 
 # target to generate assembly for a file
 src/timer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/clock.dir/build.make CMakeFiles/clock.dir/src/timer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cclock.dir/build.make CMakeFiles/cclock.dir/src/timer.cpp.s
 .PHONY : src/timer.cpp.s
 
 # Help Target
@@ -367,7 +367,7 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... clock"
+	@echo "... cclock"
 	@echo "... component"
 	@echo "... dom"
 	@echo "... screen"

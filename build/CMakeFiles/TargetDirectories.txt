@@ -1,4 +1,4 @@
-/home/papop/project/tui/clock/build/CMakeFiles/clock.dir
+/home/papop/project/tui/clock/build/CMakeFiles/cclock.dir
 /home/papop/project/tui/clock/build/CMakeFiles/package.dir
 /home/papop/project/tui/clock/build/CMakeFiles/package_source.dir
 /home/papop/project/tui/clock/build/CMakeFiles/edit_cache.dir
