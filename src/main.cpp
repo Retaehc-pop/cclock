@@ -13,9 +13,9 @@
 #include <sstream>
 #include <string>
 
-enum Page { PG_Home, PG_Clock, PG_Timer, PG_Stopwatch };
+enum Page { PG_Home, PG_Timer, PG_Stopwatch };
 
-auto current_page = PG_Timer;
+auto current_page = PG_Home;
 std::atomic<bool> running(true);
 Timer timer;
 Stopwatch stopwatch;
@@ -42,44 +42,20 @@ std::string sec_to_time(double seconds) {
 
 ftxui::Component HomePage() {
   using namespace ftxui;
-  auto component = Renderer([] {
-    return vbox({draw_time(clk.get_current_date()) | center,
-                 text(clk.get_current_time()) | center, text("") | center,
-                 hbox({
-                     text("Q-Quit"),
-                     separator(),
-                     text("Tab-Change tab"),
-                 }) | center});
-  });
-
-  return CatchEvent(component, [&](Event event) {
-    if (event.is_character()) {
-      switch (event.character()[0]) {
-      case 'q':
-      case 'Q':
-        running = false;
-        screen.ExitLoopClosure()();
-        break;
-      }
-      return true;
-    }
-    return false;
-  });
-}
-
-ftxui::Component ClockPage() {
-  using namespace ftxui;
 
   auto component = Renderer([&] {
     int width = screen.dimx();
     int height = screen.dimy();
     bool small = width < 104 || height < 16;
-    return vbox({
-        draw_time(clk.get_current_time(), small) | center,
-        text("" + std::to_string(width) + ":" + std::to_string(height)) |
-            center,
-        text("GMT" + clk.get_current_timezone()) | center,
-    });
+    return vbox({text(clk.get_current_date()) | center, separatorEmpty(),
+                 draw_time(clk.get_current_time(), small) | center,
+                 text("GMT" + clk.get_current_timezone()) | center,
+                 separatorEmpty(),
+                 hbox({
+                     text(" Q-Quit "),
+                     separator(),
+                     text(" Tab-Change tab "),
+                 }) | center});
   });
 
   return CatchEvent(component, [&](Event event) { return false; });
@@ -159,14 +135,20 @@ ftxui::Component TimerPage() {
 ftxui::Component StopwatchPage() {
   using namespace ftxui;
   auto component = Renderer([&] {
-    return vbox({text("Stopwatch") | center, separator(),
-                 draw_time(sec_to_time(stopwatch.elapsed()), true) | center});
+    return vbox({text("Stopwatch") | center, separatorEmpty(),
+                 draw_time(sec_to_time(stopwatch.elapsed()), true) | center,
+                 hbox({text(" r-reset ") | center, separator(),
+                       text(" <SPACE>-Start/Stop ") | center}) |
+                     center});
     ;
   });
 
   return CatchEvent(component, [&](Event event) {
     if (event.is_character()) {
       switch (event.character()[0]) {
+      case 'r':
+      case 'R':
+        stopwatch.reset();
       case ' ':
         if (!stopwatch.is_running())
           stopwatch.start();
@@ -186,7 +168,6 @@ int main() {
 
   std::vector<Component> pages = {
       HomePage(),
-      ClockPage(),
       TimerPage(),
       StopwatchPage(),
   };
@@ -206,7 +187,7 @@ int main() {
     bool handled = pages[current_page]->OnEvent(event);
 
     if (event == Event::Tab) {
-      current_page = (Page)(((current_page + 1) % 4));
+      current_page = (Page)(((current_page + 1) % 3));
       return true;
     }
     if (event.is_character()) {
