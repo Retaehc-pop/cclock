@@ -1,7 +1,5 @@
-
-// #include <iostream>
+#include "ftxui/dom/elements.hpp"
 #include <cassert>
-#include <ftxui/dom/elements.hpp>
 #include <string>
 #include <vector>
 
